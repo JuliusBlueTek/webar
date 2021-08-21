@@ -14,7 +14,7 @@ var setMatrix = function (matrix, value) {
   }
 };
 
-function start(container, markerUrl, workerPath, video, input_width, input_height, canvas_draw) {
+function start(container, markerUrl, video, input_width, input_height, canvas_draw) {
   var vw, vh;
   var sw, sh;
   var pscale, sscale;
