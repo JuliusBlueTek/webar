@@ -14,7 +14,7 @@ var setMatrix = function (matrix, value) {
   }
 };
 
-function start(container, markerUrl, workerjs, video, input_width, input_height, canvas_draw) {
+function start(container, markerUrl, workerPath, video, input_width, input_height, canvas_draw) {
   var vw, vh;
   var sw, sh;
   var pscale, sscale;
@@ -22,7 +22,7 @@ function start(container, markerUrl, workerjs, video, input_width, input_height,
   var pw, ph;
   var ox, oy;
   var worker;
-  var camera_para = './../examples/Data/camera_para.dat'
+  var camera_para = 'https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/JuliusBlueTek/webar/main/js/camera_para.dat'
 
   var canvas_process = document.createElement('canvas');
   var context_process = canvas_process.getContext('2d');
@@ -111,7 +111,7 @@ function start(container, markerUrl, workerjs, video, input_width, input_height,
 
     renderer.setSize(sw, sh);
 
-    worker = new Worker(workerjs);
+    worker = new Worker('https://raw.githack.com/JuliusBlueTek/webar/main/js/artoolkitNFT.worker.js');
 
     worker.postMessage({ type: "load", pw: pw, ph: ph, camera_para: camera_para, marker: markerUrl });
 
