@@ -60,7 +60,7 @@ function start(container, markerUrl, video, input_width, input_height, canvas_dr
   // Load a glTF resource
   loader.load(
     // resource URL
-    'pill.gltf',
+    'https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/JuliusBlueTek/webar/main/3d/pill.gltf',
     // called when the resource is loaded
     function ( gltf ) {
       var model = gltf.scene;
