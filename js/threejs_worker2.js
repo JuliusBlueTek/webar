@@ -14,7 +14,7 @@ var setMatrix = function (matrix, value) {
   }
 };
 
-function start(container, markerUrl, video, input_width, input_height, canvas_draw) {
+function start(container, markerUrl, workerjs, video, input_width, input_height, canvas_draw) {
   var vw, vh;
   var sw, sh;
   var pscale, sscale;
@@ -111,7 +111,7 @@ function start(container, markerUrl, video, input_width, input_height, canvas_dr
 
     renderer.setSize(sw, sh);
 
-    worker = new Worker('../js/artoolkitNFT.worker.js');
+    worker = new Worker(workerjs);
 
     worker.postMessage({ type: "load", pw: pw, ph: ph, camera_para: camera_para, marker: markerUrl });
 
